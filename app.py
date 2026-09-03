@@ -14,6 +14,14 @@ st.set_page_config(
 
 st.sidebar.title("📦 Validation Copilot")
 
+st.markdown("""
+<style>
+[data-testid="stSidebarNav"] {
+    display: none;
+}
+</style>
+""", unsafe_allow_html=True)
+
 menu = st.sidebar.radio(
     "Navigation",
     [
