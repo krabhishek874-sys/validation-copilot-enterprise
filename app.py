@@ -55,11 +55,6 @@ st.markdown(
 # SIDEBAR
 # ==========================================
 
-st.sidebar.image(
-    "https://img.icons8.com/color/96/dashboard-layout.png",
-    width=80
-)
-
 st.sidebar.title("Navigation")
 
 menu = st.sidebar.radio(
