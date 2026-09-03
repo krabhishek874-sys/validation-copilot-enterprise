@@ -55,11 +55,8 @@ st.markdown(
 # SIDEBAR
 # ==========================================
 st.sidebar.image(
-2
 "https://tse2.mm.bing.net/th/id/OIP.OpMekxaN0ukeUrG4PyJoNgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-3
 use_container_width=True
-4
 )
 
 
