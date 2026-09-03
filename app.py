@@ -72,23 +72,6 @@ menu = st.sidebar.radio(
     ]
 )
 
-st.sidebar.markdown("---")
-
-st.sidebar.info(
-    """
-Validation Copilot Enterprise
-
-✅ Validation Tracking
-
-✅ Reminder Management
-
-✅ Aging Analysis
-
-✅ Executive Reporting
-
-✅ Risk Monitoring
-"""
-)
 
 # ==========================================
 # PAGE ROUTING
