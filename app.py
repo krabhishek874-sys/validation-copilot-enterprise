@@ -31,22 +31,27 @@ apply_theme()
 st.markdown(
     """
     <div style="
-        background: linear-gradient(90deg,#C00000,#8B0000);
-        padding:15px;
-        border-radius:10px;
+        background:white;
+        padding:20px;
+        border-radius:15px;
         margin-bottom:20px;
+        box-shadow:0px 4px 15px rgba(0,0,0,0.1);
+        border-left:6px solid #C00000;
     ">
         <h1 style="
-            color:white;
+            color:#C00000;
             text-align:center;
             margin:0;
+            font-weight:bold;
         ">
             📦 Validation Copilot Enterprise
         </h1>
+
         <p style="
-            color:white;
+            color:#555555;
             text-align:center;
-            margin:5px;
+            margin-top:10px;
+            font-size:18px;
         ">
             Validation Monitoring, Reminders & Reporting Platform
         </p>
