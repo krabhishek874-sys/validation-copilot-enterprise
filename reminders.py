@@ -73,3 +73,27 @@ def show_reminders():
         st.success(
             f"{success} reminder emails sent."
         )
+
+for _, row in failed_df.iterrows():
+
+    col1, col2 = st.columns([4,1])
+
+    with col1:
+        st.write(
+            row["validation_id"]
+        )
+
+    with col2:
+        if st.button(
+            "Send",
+            key=row["validation_id"]
+        ):
+            send_email(
+                row["email"],
+                "Validation Reminder",
+                "Please review validation."
+            )
+
+            st.success(
+                f"Sent to {row['assigned_to']}"
+            )
