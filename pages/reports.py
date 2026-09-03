@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import plotly.express as px
 
 from servicenow_client import get_validations
@@ -11,27 +10,11 @@ def show_reports():
 
     df = get_validations()
 
-    # ==========================
-    # KPI SECTION
-    # ==========================
-
     total = len(df)
-
-    failed = len(
-        df[df["status"] == "Failed"]
-    )
-
-    open_count = len(
-        df[df["status"] == "Open"]
-    )
-
-    critical = len(
-        df[df["priority"] == "Critical"]
-    )
-
-    overdue = len(
-        df[df["age"] > 7]
-    )
+    failed = len(df[df["status"] == "Failed"])
+    open_count = len(df[df["status"] == "Open"])
+    critical = len(df[df["priority"] == "Critical"])
+    overdue = len(df[df["age"] > 7])
 
     c1, c2, c3, c4, c5 = st.columns(5)
 
@@ -43,25 +26,90 @@ def show_reports():
 
     st.divider()
 
-    # ==========================
-    # STATUS DISTRIBUTION
-    # ==========================
+    st.subheader("Status Distribution")
 
-    st.subheader("📈 Validation Status Distribution")
-
-    status_chart = px.pie(
+    fig1 = px.pie(
         df,
-        names="status",
-        title="Validation Status Breakdown"
+        names="status"
     )
 
     st.plotly_chart(
-        status_chart,
+        fig1,
         use_container_width=True
     )
 
-    # ==========================
-    # PRIORITY BREAKDOWN
-    # ==========================
+    st.subheader("Priority Distribution")
 
-    st.
+    priority_df = (
+        df["priority"]
+        .value_counts()
+        .reset_index()
+    )
+
+    priority_df.columns = [
+        "Priority",
+        "Count"
+    ]
+
+    fig2 = px.bar(
+        priority_df,
+        x="Priority",
+        y="Count",
+        color="Priority"
+    )
+
+    st.plotly_chart(
+        fig2,
+        use_container_width=True
+    )
+
+    st.subheader("Validation Aging")
+
+    fig3 = px.bar(
+        df,
+        x="validation_id",
+        y="age",
+        color="priority"
+    )
+
+    st.plotly_chart(
+        fig3,
+        use_container_width=True
+    )
+
+    st.subheader("Overdue Validations")
+
+    overdue_df = df[df["age"] > 7]
+
+    st.dataframe(
+        overdue_df,
+        use_container_width=True
+    )
+
+    st.subheader("AI Insights")
+
+    st.success(
+        f"""
+Total validations: {total}
+
+Failed validations: {failed}
+
+Critical validations: {critical}
+
+Overdue validations: {overdue}
+
+Recommended action:
+Focus on Critical validations that are older than 7 days.
+"""
+    )
+
+    st.subheader("Export Report")
+
+    csv = df.to_csv(index=False)
+
+    st.download_button(
+        label="Download CSV Report",
+        data=csv,
+        file_name="validation_report.csv",
+        mime="text/csv"
+    )
