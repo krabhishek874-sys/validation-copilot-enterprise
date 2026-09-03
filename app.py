@@ -20,8 +20,7 @@ menu = st.sidebar.radio(
         "Dashboard",
         "Validations",
         "Reminders",
-        "Reports",
-        "AI Assistant"
+        "Reports"
     ]
 )
 
@@ -37,5 +36,3 @@ elif menu == "Reminders":
 elif menu == "Reports":
     show_reports()
 
-elif menu == "AI Assistant":
-    show_ai()
