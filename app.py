@@ -45,7 +45,7 @@ st.markdown(
             font-size:48px;
             font-weight:bold;
         ">
-            📦 Finance Team Validation Dashboard
+         Finance Team Validation Dashboard 📦
         </h1>
       """,
     unsafe_allow_html=True
