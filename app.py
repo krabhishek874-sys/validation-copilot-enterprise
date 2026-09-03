@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.sidebar.title("📦 Validation Copilot")
+st.sidebar.title("📦 Validation Tasks")
 
 st.markdown("""
 <style>
