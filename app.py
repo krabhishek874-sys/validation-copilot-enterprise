@@ -42,10 +42,10 @@ st.markdown(
             color:#C00000;
             text-align:center;
             margin-bottom:10px;
-            font-size:52px;
+            font-size:48px;
             font-weight:bold;
         ">
-            📦 Validation Copilot Enterprise
+            📦 Finance Team Validation Dashboard
         </h1>
       """,
     unsafe_allow_html=True
