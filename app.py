@@ -56,9 +56,8 @@ st.markdown(
         ">
             Validation Monitoring, Reminders & Reporting Platform
         </p>
-
     </div>
-    """,
+      """,
     unsafe_allow_html=True
 )
 
