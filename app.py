@@ -4,7 +4,7 @@ from pages.dashboard import show_dashboard
 from pages.validations import show_validations
 from pages.reminders import show_reminders
 from pages.reports import show_reports
-from pages.ai_assistant import show_ai
+
 
 st.set_page_config(
     page_title="Validation Copilot Enterprise",
