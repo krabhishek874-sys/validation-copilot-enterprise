@@ -32,16 +32,17 @@ st.markdown(
     """
     <div style="
         background:white;
-        padding:20px;
+        padding:25px;
         border-radius:15px;
         margin-bottom:20px;
-        box-shadow:0px 4px 15px rgba(0,0,0,0.1);
+        box-shadow:0px 4px 15px rgba(0,0,0,0.10);
         border-left:6px solid #C00000;
     ">
         <h1 style="
             color:#C00000;
             text-align:center;
-            margin:0;
+            margin-bottom:10px;
+            font-size:52px;
             font-weight:bold;
         ">
             📦 Validation Copilot Enterprise
@@ -55,6 +56,7 @@ st.markdown(
         ">
             Validation Monitoring, Reminders & Reporting Platform
         </p>
+
     </div>
     """,
     unsafe_allow_html=True
