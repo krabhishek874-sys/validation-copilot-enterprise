@@ -1,2 +1,2 @@
-# validation-copilot-enterprise
-ServiceNow Validation Reminder Agent.
+# Validation Copilot Enterprise
+Features: ServiceNow integration, reminders, escalations, reports, AI assistant, Docker and CI/CD.
